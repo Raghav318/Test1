@@ -3,7 +3,7 @@ name: Mirror repo to S3
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   s3Backup:
     runs-on: Windows
