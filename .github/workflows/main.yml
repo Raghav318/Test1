@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: S3 Backup
-        uses: Raghav318/test1
+        uses: Raghav318/test1@v2
         env:
           ACCESS_KEY_ID: AKIAU5XGNFAPXWV3N2KH
           SECRET_ACCESS_KEY: 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
