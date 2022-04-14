@@ -8,12 +8,12 @@ jobs:
   s3Backup:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v
+      - uses: actions/checkout@v2
       - name: S3 Backup
-        uses: peter-evans/s3-backup@v
+        uses: peter-evans/s3-backup@v2
         env:
           ACCESS_KEY_ID: AKIAU5XGNFAPXWV3N2KH
           SECRET_ACCESS_KEY: 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
-          MIRROR_TARGET: testbucketajrac
+          MIRROR_TARGET: arn:aws:s3:::testbucketajrac
         with:
           args: --overwrite --remove
