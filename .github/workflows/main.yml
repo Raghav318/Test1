@@ -1,19 +1,34 @@
+# This workflow performs a backup of your repository to vBridge object storage
 
-name: Mirror repo to S3
+name: Backup to vBridge S3
+
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches:
-      - main
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  s3Backup:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: S3 Backup
-        uses: peter-evans/s3-backup@v1
+        uses: peter-evans/s3-backup@v1.0.2
         env:
-          ACCESS_KEY_ID: AKIAU5XGNFAPXWV3N2KH
-          MIRROR_TARGET: s3://testbucketajrac
-          SECRET_ACCESS_KEY:  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
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          MIRROR_TARGET: testbucketajrac/Raghav
+          STORAGE_SERVICE_URL: https://s3-akl.mycloudspace.co.nz
         with:
           args: --overwrite --remove
