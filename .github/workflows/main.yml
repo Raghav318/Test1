@@ -12,8 +12,8 @@ jobs:
       - name: S3 Backup
         uses: peter-evans/s3-backup@v1
         env:
-          ACCESS_KEY_ID: ${{ secrets.AKIAU5XGNFAPXWV3N2KH }}
-          MIRROR_TARGET: ${{ secrets.testbucketajrac }}
-          SECRET_ACCESS_KEY: ${{ secrets.ioQQ9sz+TBS49LNRpL2REHDJzf7kyzE8F39pxlHq }}
+          ACCESS_KEY_ID: ${{ AKIAU5XGNFAPXWV3N2KH }}
+          MIRROR_TARGET: ${{ testbucketajrac }}
+          SECRET_ACCESS_KEY: ${{ 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 }}
         with:
           args: --overwrite --remove
