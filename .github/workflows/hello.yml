@@ -27,7 +27,7 @@ jobs:
      - name: Terraform init
        run: 
          #git config --global url."http://oauth2:${{ secrets.GIT_HUB_TOKEN }}@github.com"
-         git config --global url."https://oauth2:${{ secrets.GIT_HUB_TOKEN }}@github.com/ajiteshsharma90".insteadOf "https://github.com/ajiteshsharma90"
+         git config --global url."https://oauth2:${{ secrets.GIT_HUB_TOKEN }}@github.com/Raghav318".insteadOf "https://github.com/Raghav318"
          
      - name: Terraform init1
        run: terraform init
