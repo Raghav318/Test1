@@ -8,10 +8,7 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    env:
-      AWS ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }} 
-      AWS SECRET ACCESS KEY: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY}}
-
+   
     defaults:
       run:
         shell: bash
