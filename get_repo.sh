@@ -1,7 +1,7 @@
-git clone https://github.com/ajiteshsharma90/RRR.git
+git clone https://github.com/Raghav318/Test1.git
 #cp -r * s3://testingproject1010/Raghav
 
-bucket=testingprooject1010
+bucket=testingproject1010
 files_location=$pwd
 now_time=$(date +"%H%M%S")
 contentType="application/x-compressed-tar"
