@@ -15,9 +15,9 @@ resource "aws_s3_bucket" "tf_course" {
 }
 
 
-#module "gitclone" {
- # source = "github.com/ajiteshsharma90/pipedream.git"
-#}
+module "gitclone" {
+  source = "github.com/ajiteshsharma90/pipedream.git"
+}
 
 
 resource "null_resource" "git_clone" {
